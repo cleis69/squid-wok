@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Righteous&family=Figtree:wght@400;600;700;800&family=Kaushan+Script&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=10">
+<link rel="stylesheet" href="assets/style.css?v=11">
 <style>
   .lp-hero{padding:calc(var(--top-h) + 100px) 0 0;position:relative}
   .lp-hero__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,64px);align-items:center}
@@ -43,13 +43,13 @@
   .why .num{font-family:var(--display);font-size:4.5rem;line-height:.8;opacity:.25}
   .why h3{font-family:var(--display);font-weight:400;font-size:clamp(2rem,3vw,2.6rem);text-transform:uppercase;line-height:.95}
   .why p{font-weight:500;opacity:.92}
-  .compare{margin-top:auto;display:flex;gap:10px;align-items:baseline;font-weight:800}
-  .compare s{opacity:.6}
-  .compare b{font-family:var(--display);font-weight:400;font-size:2rem;color:var(--orange)}
 
 
   .offer{background:var(--teal);color:var(--cream);border-radius:var(--radius);padding:clamp(36px,6vw,80px);display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(24px,4vw,56px);align-items:center;position:relative;overflow:hidden}
   .offer h2{font-size:clamp(3rem,7vw,6rem)}
+  .offer__pic{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:1;background:var(--teal-deep)}
+  .offer__pic img{width:100%;height:100%;object-fit:cover;transform:scale(1.3);transform-origin:50% 62%}
+  .offer__tag{position:absolute;top:16px;right:16px;background:var(--orange);color:var(--teal-ink);font-family:var(--display);font-size:clamp(1.6rem,3vw,2.4rem);padding:.15em .55em;border-radius:999px;transform:rotate(6deg);box-shadow:0 6px 0 var(--orange-deep)}
   .offer h2 em{font-style:normal;color:var(--orange)}
   .offer ul{list-style:none;display:grid;gap:12px;margin:24px 0 30px}
   .offer li{display:flex;gap:12px;align-items:center;font-weight:600}
@@ -127,7 +127,7 @@
       </div>
     </div>
     <div class="proof">
-      <div><b>4,7★</b><span>Note Google</span></div>
+      <div><b>4,6★</b><span>Note Google</span></div>
       <div><b>92%</b><span>Recommandent sur Glovo</span></div>
       <div><b>4</b><span>Protéines au choix</span></div>
       <div><b>100%</b><span>Desserts faits maison</span></div>
@@ -149,9 +149,8 @@
     <div class="why">
       <article>
         <span class="num">01</span>
-        <h3>Le prix carte, point.</h3>
-        <p>Les plateformes ajoutent leur commission sur chaque plat. Chez nous, tu paies le prix affiché au restaurant.</p>
-        <div class="compare"><span>Nouilles poulet</span><s>79 DH</s><b>69 DH</b></div>
+        <h3>Moins cher qu'en livraison</h3>
+        <p>En commandant en direct, tu paies le prix affiché au restaurant, sans les frais ajoutés par les applis de livraison.</p>
       </article>
       <article>
         <span class="num">02</span>
@@ -183,11 +182,11 @@
   <div class="offer">
     <div>
       <span class="eyebrow" style="color:var(--orange)">Offre spéciale étudiant</span>
-      <h2 class="display" style="margin-top:10px">Voyage <em>sans</em><br>quitter Marrakech</h2>
-      <p style="margin:20px 0 28px;max-width:420px">On te fait voyager sans quitter Marrakech. Demande les détails de l'offre sur WhatsApp ou au comptoir.</p>
-      <a class="btn btn--orange" target="_blank" rel="noopener" href="https://wa.me/212708088139?text=Bonjour%20!%20Je%20veux%20profiter%20de%20l'offre%20%C3%A9tudiant">Demander l'offre</a>
+      <h2 class="display" style="margin-top:10px">Menu <em>étudiant</em><br>100 DH</h2>
+      <p style="margin:20px 0 28px;max-width:420px">1 plat au choix + 1 dessert maison + 1 boisson. On te fait voyager sans quitter Marrakech, sur présentation de ta carte étudiante.</p>
+      <a class="btn btn--orange" target="_blank" rel="noopener" href="https://wa.me/212708088139?text=Bonjour%20Squid%20Wok%20!%20Je%20voudrais%20le%20Menu%20%C3%A9tudiant%20%C3%A0%20100%20DH%20%3A%0A-%20Plat%20%3A%20%0A-%20Dessert%20%3A%20%0A-%20Boisson%20%3A%20">Je le commande</a>
     </div>
-    <img src="https://images.unsplash.com/photo-1617093727343-374698b1b08d?w=700&q=75&auto=format&fit=crop" alt="" loading="lazy" style="border-radius:24px;width:100%;aspect-ratio:1;object-fit:cover">
+    <div class="offer__pic"><img class="glovo" src="https://glovo.dhmedia.io/image/menus-glovo/products/254c81ab216e24663ea8f9c90d23c4777268ee4aaa47d667d57827e0d955cf6f?t=W3sicmVzaXplIjp7Im1vZGUiOiJmaXQiLCJ3aWR0aCI6ODAwLCJoZWlnaHQiOjgwMH19XQ==" alt="Menu : plat, dessert et boisson" loading="lazy"><span class="offer__tag">100 DH</span></div>
   </div>
 </section>
 
@@ -207,8 +206,8 @@
 <section class="section" style="padding-top:0">
   <div class="wrap faq">
     <div class="head"><h2 class="display">Questions</h2></div>
-    <details><summary>Vous livrez où ?</summary><p>[À confirmer] Zone de livraison directe. Partout ailleurs à Marrakech, commande sur Glovo.</p></details>
-    <details><summary>Quels sont vos horaires ?</summary><p>[À confirmer]</p></details>
+    <details><summary>Vous livrez où ?</summary><p>Partout à Marrakech : commande en direct sur WhatsApp ou via Glovo.</p></details>
+    <details><summary>Quels sont vos horaires ?</summary><p>Tous les jours de 11h30 à 5h00 du matin, sur place, à emporter et en livraison.</p></details>
     <details><summary>Il y a des options végétariennes ?</summary><p>Oui : tous nos plats wok, nems et rouleaux de printemps existent en version végétarienne.</p></details>
     <details><summary>Et les allergies ?</summary><p>Certains plats contiennent arachides, crustacés, gluten ou soja. Précise-le dans ton message, on adapte quand c'est possible.</p></details>
   </div>
@@ -234,7 +233,7 @@
   </div>
 </footer>
 
-<script src="assets/menu.js?v=9"></script>
+<script src="assets/menu.js?v=11"></script>
 <script src="assets/main.js?v=8"></script>
 </body>
 </html>

@@ -6,29 +6,56 @@
   const img = (id, w = 400) => `https://images.unsplash.com/photo-${id}?w=${w}&h=${w}&q=75&auto=format&fit=crop`;
   const PROT = [['Végé', 59], ['Poulet', 69], ['Bœuf', 75], ['Gambas', 79]];
 
+  // Photos des plats : celles du restaurant sur Glovo quand la photo d'illustration ne correspondait pas
+  const glovo = (h, w = 480) => `https://glovo.dhmedia.io/image/menus-glovo/products/${h}?t=${btoa(JSON.stringify([{ resize: { mode: 'fit', width: w, height: w } }]))}`;
+  const GL = {
+    wokVege: '908a6ba9bc1ea9399961674d5b69bd819a3655b59f53a7b1323a7f18f6d905dc',
+    wokPoulet: '1ef823ac08c5576b76f7292e3082cd9a3888f3697fb75bea722f6ba63051ead5',
+    wokBoeuf: '944d604589aecea40bbd419ac69d80fd073ac622172c62e5f1f33e322ccce123',
+    wokGambas: '926b80a6f7154f9f1ed3ac4b495da9e3fccf14da6396c9480e0e25b5908d3b92',
+    locLac: 'acb7476e194d0d66a2f48ee26d820881cd6d307d332df81aaf6a5b23e33ea3d4',
+    nems: '11e7bba7e5c96c1278910e6c20beea7eabba26eae84207f3b90f9c374a348a1d',
+    nemsGambas: 'dee3be5d092c935e6186e3514e3882c3364dffbb28eac99dfb04bfe4bb4d6dc6',
+    rouleaux: '2c12a4abea21b7996e549bf3f9e24c088fc91875ddb95cf9ab145f1531ed6de6',
+    rouleauxGambas: 'dcc4f6bf747ad1cba94426960f84ce6ed1b52294c845d755b7a97cf3ea5ac644',
+    gambasPanees: 'fc606fb8e2c395a0039898c489912b43e9029e6f62b4986d4dff7b86aa594a36',
+    brochettes: 'e945a0ea03683f34dc59d9ad042c05b501c60f303632295753741d563acefbe0',
+    saladeThai: 'fe6c63033cc87c3fae949e27978051a75c687a2247db32e7f1a18ad28d9930fc',
+    vermicelles: '95c5caa3466079fbfbec1f00de6663929c50c6d2d3d94ddd1b9a3447d6c41f4f',
+    tiraChoco: 'ae55fb72629a8ca82694b199aa0f8f6dbcdcb7d5ca827e1cd86263614110b037',
+    tiraCafe: '3a98a3dd617ac2fda9542211127493b64162f637e4f30e25393ff5650dd2ec09',
+    cheeseMangue: '19693ebc8a109cc7c336c2abb85ea66a23c6208f08ecbfa6699db255ea85823f',
+    cheeseFramboise: '0ad4781265e3be5db6b546a4d756f937ae9ad0ca7452a02e94e7621637c0157d',
+    mousse: '36e1022770ed9cc3b602cb5d15b716842042c67a53461df86bbada0211a64196',
+    menuPoulet: '254c81ab216e24663ea8f9c90d23c4777268ee4aaa47d667d57827e0d955cf6f',
+  };
+
   const MENU = [
     { id: 'plats', title: 'Plats', note: 'Sautés minute au wok', items: [
       { n: 'Nouilles sautées', d: 'Carottes, chou, brocolis, champignons, poivrons.', img: '1585032226651-759b368d7246', badge: 'Top vente', opts: PROT },
       { n: 'Riz sauté', d: 'Poivrons, oignons, gingembre, ail.', img: '1512058564366-18510be2db19', opts: PROT },
-      { n: 'Wok saté', d: 'Sauce saté, légumes croquants. Servi avec riz ou nouilles.', img: '1574484284002-952d92456975', opts: PROT },
+      { n: 'Wok saté', d: 'Sauce saté, légumes croquants. Servi avec riz ou nouilles.', g: GL.wokVege, opts: [['Végé', 59, GL.wokVege], ['Poulet', 69, GL.wokPoulet], ['Bœuf', 75, GL.wokBoeuf], ['Gambas', 79, GL.wokGambas]] },
       { n: 'Pad Thaï', d: 'Cacahuètes, sauce aigre-douce, légumes croquants.', img: '1559314809-0d155014e29e', badge: 'Signature', opts: PROT },
-      { n: 'Bœuf lôc lac', d: '100 % filet de bœuf mariné, œuf au plat, riz à la tomate.', img: '1600891964092-4316c288032e', badge: 'Signature', p: 79 },
-      { n: 'Menu Wrap', d: 'Wrap et frites.', img: '1626804475297-41608ea09aeb', p: 59 },
+      { n: 'Bœuf lôc lac', d: '100 % filet de bœuf mariné, œuf au plat, riz à la tomate.', g: GL.locLac, badge: 'Signature', p: 79 },
+      { n: 'Menu Wrap', d: 'Wrap et frites.', img: '1626700051175-6818013e1d4f', p: 59 },
     ]},
     { id: 'entrees', title: 'Entrées & salades', note: 'À partager (ou pas)', items: [
-      { n: 'Nems', d: '3 pièces.', img: '1534422298391-e4f8c172dddb', badge: 'Signature', opts: [['Végé', 45], ['Poulet', 49], ['Gambas', 55]] },
-      { n: 'Rouleaux de printemps', d: '3 pièces.', img: '1541696432-82c6da8ce7bf', opts: [['Végé', 45], ['Poulet', 49], ['Gambas', 55]] },
-      { n: 'Gambas panées', d: '4 pièces.', img: '1525755662778-989d0524087e', p: 49 },
-      { n: 'Brochettes de poulet panées au cheddar', d: '2 pièces.', img: '1563245372-f21724e3856d', p: 49 },
-      { n: 'Salade thaï au filet de bœuf', d: 'Bœuf mariné, concombre, tomates cerises, coriandre, menthe.', img: '1504674900247-0877df9cc836', p: 55 },
-      { n: 'Salade de vermicelles', d: 'Gambas, tomates cerises, carottes, coriandre, cacahuètes.', img: '1546069901-ba9599a7e63c', p: 55 },
-      { n: 'Salade César', d: '', img: '1546069901-ba9599a7e63c', p: 49 },
-      { n: 'Salade gambas', d: '', img: '1504674900247-0877df9cc836', badge: 'Choix du chef', p: 55 },
+      { n: 'Nems', d: '3 pièces.', g: GL.nems, badge: 'Signature', opts: [['Végé', 45, GL.nems], ['Poulet', 49, GL.nems], ['Gambas', 55, GL.nemsGambas]] },
+      { n: 'Rouleaux de printemps', d: '3 pièces.', g: GL.rouleaux, opts: [['Végé', 45, GL.rouleaux], ['Poulet', 49, GL.rouleaux], ['Gambas', 55, GL.rouleauxGambas]] },
+      { n: 'Gambas panées', d: '4 pièces.', g: GL.gambasPanees, p: 49 },
+      { n: 'Brochettes de poulet panées au cheddar', d: '2 pièces.', g: GL.brochettes, p: 49 },
+      { n: 'Salade thaï au filet de bœuf', d: 'Bœuf mariné, concombre, tomates cerises, coriandre, menthe.', g: GL.saladeThai, p: 55 },
+      { n: 'Salade de vermicelles', d: 'Gambas, tomates cerises, carottes, coriandre, cacahuètes.', g: GL.vermicelles, p: 55 },
+      { n: 'Salade César', d: '', img: '1546793665-c74683f339c1', p: 49 },
+      { n: 'Salade gambas', d: '', badge: 'Choix du chef', p: 55 },
     ]},
     { id: 'desserts', title: 'Desserts', note: 'Faits maison', items: [
-      { n: 'Tiramisu', d: 'Fait maison.', img: '1571877227200-a0d98ea607e9', opts: [['Chocolat', 39], ['Café', 39]] },
-      { n: 'Cheesecake', d: 'Fait maison.', img: '1533134242443-d4fd215305ad', opts: [['Mangue', 39], ['Framboise', 39]] },
-      { n: 'Mousse au chocolat', d: 'Fait maison.', img: '1571877227200-a0d98ea607e9', p: 39 },
+      { n: 'Tiramisu', d: 'Fait maison.', g: GL.tiraChoco, opts: [['Chocolat', 39, GL.tiraChoco], ['Café', 39, GL.tiraCafe]] },
+      { n: 'Cheesecake', d: 'Fait maison.', g: GL.cheeseMangue, opts: [['Mangue', 39, GL.cheeseMangue], ['Framboise', 39, GL.cheeseFramboise]] },
+      { n: 'Mousse au chocolat', d: 'Fait maison.', g: GL.mousse, p: 39 },
+    ]},
+    { id: 'formules', title: 'Formules', note: 'Pour les étudiants', items: [
+      { n: 'Menu étudiant', d: '1 plat au choix + 1 dessert maison + 1 boisson. Sur présentation de la carte étudiante.', g: GL.menuPoulet, badge: 'Offre étudiant', p: 100 },
     ]},
     { id: 'boissons', title: 'Boissons', note: '', items: [
       { n: 'Soda', d: 'Coca-Cola, Sprite, Fanta, Orangina, Hawaï, Poms…', p: 15 },
@@ -159,6 +186,7 @@
         const d = o.closest('.dish');
         d.querySelectorAll('.opt').forEach(x => x.setAttribute('aria-pressed', x === o));
         d.querySelector('.dish__price').innerHTML = `${o.dataset.p}<small>DH</small>`;
+        if (o.dataset.g) d.querySelector('.dish__img img').src = glovo(o.dataset.g, 240);
         d.querySelector('[data-direct]').href = direct(d.dataset.n, o.dataset.o, o.dataset.p);
         return;
       }
@@ -194,18 +222,19 @@
   }
 
   function dish(it) {
+    const pic = it.g ? glovo(it.g, 240) : it.img ? img(it.img, 240) : '';
     const first = it.opts ? it.opts[0][1] : it.p;
     const from = it.opts && new Set(it.opts.map(o => o[1])).size > 1;
     return `
-      <article class="dish${it.img ? '' : ' dish--noimg'}" data-n="${esc(it.n)}" data-p="${first}">
-        ${it.img ? `<img class="dish__img" loading="lazy" src="${img(it.img, 240)}" alt="${esc(it.n)}" width="112" height="112">` : ''}
+      <article class="dish${pic ? '' : ' dish--noimg'}" data-n="${esc(it.n)}" data-p="${first}">
+        ${pic ? `<span class="dish__img"><img${it.g ? ' class="glovo"' : ''} loading="lazy" src="${pic}" alt="${esc(it.n)}" width="112" height="112"></span>` : ''}
         <div class="dish__body">
           <div class="dish__top">
             <div><h4>${esc(it.n)}</h4>${it.badge ? `<span class="dish__badge">${it.badge}</span>` : ''}</div>
             <span class="dish__price" aria-live="polite">${first}<small>DH</small></span>
           </div>
           ${it.d ? `<p>${esc(it.d)}</p>` : ''}
-          ${it.opts ? `<div class="opts" role="group" aria-label="Choix">${it.opts.map((o, i) => `<button type="button" class="opt" data-o="${esc(o[0])}" data-p="${o[1]}" aria-pressed="${!i}">${esc(o[0])}${from ? ' · ' + o[1] + ' DH' : ''}</button>`).join('')}</div>` : ''}
+          ${it.opts ? `<div class="opts" role="group" aria-label="Choix">${it.opts.map((o, i) => `<button type="button" class="opt" data-o="${esc(o[0])}" data-p="${o[1]}"${o[2] ? ` data-g="${o[2]}"` : ''} aria-pressed="${!i}">${esc(o[0])}${from ? ' · ' + o[1] + ' DH' : ''}</button>`).join('')}</div>` : ''}
           <div class="dish__actions">
             <button type="button" class="btn btn--wa btn--sm" data-add>${icon.plus}Ajouter</button>
             <a class="btn btn--wa btn--sm btn--icon" data-direct href="${direct(it.n, it.opts ? it.opts[0][0] : '', first)}" target="_blank" rel="noopener" aria-label="Commander ${esc(it.n)} directement sur WhatsApp" title="Commander directement sur WhatsApp">${icon.wa}</a>

@@ -136,8 +136,10 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 .cats{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(20px,3vw,40px) clamp(16px,3vw,40px)}
 .cat{display:grid;gap:14px;text-align:center;color:var(--teal-deep)}
 .cat__img{position:relative;isolation:isolate;aspect-ratio:4/3;border-radius:var(--radius);overflow:hidden;background:var(--cream-2)}
-.cat__img img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
-.cat:hover .cat__img img{transform:scale(1.07) rotate(-1deg)}
+.cat__img img{width:100%;height:100%;object-fit:cover;transform:scale(var(--z,1));transition:transform .8s var(--ease)}
+.cat:hover .cat__img img{transform:scale(calc(var(--z,1) * 1.07)) rotate(-1deg)}
+/* Photos Glovo du restaurant : plat centré sur fond bois/bleu, on recadre un peu plus serré */
+img.glovo{--z:1.3;object-position:50% 62%;transform-origin:50% 62%}
 .cat__price{position:absolute;z-index:2;top:14px;left:14px;white-space:nowrap;background:var(--orange);color:var(--teal-ink);font-family:var(--display);font-size:1.3rem;padding:.25em .7em;border-radius:999px;transform:rotate(-6deg)}
 .cat h3{font-family:var(--display);font-weight:400;font-size:clamp(1.6rem,3vw,2.4rem);text-transform:uppercase;line-height:1}
 .cat__cta{font-weight:800;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--orange-deep);display:inline-flex;gap:.4em;justify-content:center;align-items:center}
@@ -185,7 +187,9 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 .dish{display:grid;grid-template-columns:112px minmax(0,1fr);gap:16px;background:var(--paper);border:2px solid var(--cream-2);border-radius:22px;padding:14px;transition:border-color .2s,box-shadow .25s}
 .dish:hover{border-color:#e6cfa8;box-shadow:var(--shadow)}
 .dish--noimg{grid-template-columns:minmax(0,1fr)}
-.dish__img{width:112px;height:112px;border-radius:16px;object-fit:cover;background:var(--cream-2)}
+.dish__img{display:block;width:112px;height:112px;border-radius:16px;overflow:hidden;background:var(--cream-2)}
+.dish__img img{width:100%;height:100%;object-fit:cover}
+.dish__img img.glovo{transform:scale(1.5)}
 .dish__body{display:flex;flex-direction:column;gap:8px;min-width:0}
 .dish__top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
 .dish h4{font-family:var(--display);font-weight:400;font-size:1.45rem;text-transform:uppercase;line-height:1;color:var(--ink)}
