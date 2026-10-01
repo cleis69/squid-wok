@@ -159,6 +159,7 @@
         const d = o.closest('.dish');
         d.querySelectorAll('.opt').forEach(x => x.setAttribute('aria-pressed', x === o));
         d.querySelector('.dish__price').innerHTML = `${o.dataset.p}<small>DH</small>`;
+        d.querySelector('[data-direct]').href = direct(d.dataset.n, o.dataset.o, o.dataset.p);
         return;
       }
       const a = e.target.closest('[data-add]');
@@ -182,6 +183,12 @@
     menuEl.querySelectorAll('.menu-cat').forEach(s => io.observe(s));
   }
 
+  // Lien WhatsApp direct pour un seul plat (sans passer par le panier)
+  function direct(name, opt, price) {
+    const txt = `Bonjour Squid Wok ! Je voudrais commander :\n• 1× ${name}${opt ? ' (' + opt + ')' : ''} — ${price} DH\n\nMode : À emporter / Livraison\nNom :`;
+    return `https://wa.me/${WA}?text=${encodeURIComponent(txt)}`;
+  }
+
   function dish(it) {
     const first = it.opts ? it.opts[0][1] : it.p;
     const from = it.opts && new Set(it.opts.map(o => o[1])).size > 1;
@@ -197,6 +204,7 @@
           ${it.opts ? `<div class="opts" role="group" aria-label="Choix">${it.opts.map((o, i) => `<button type="button" class="opt" data-o="${esc(o[0])}" data-p="${o[1]}" aria-pressed="${!i}">${esc(o[0])}${from ? ' · ' + o[1] : ''}</button>`).join('')}</div>` : ''}
           <div class="dish__actions">
             <button type="button" class="btn btn--wa btn--sm" data-add>${icon.plus}Ajouter</button>
+            <a class="btn btn--wa btn--sm btn--icon" data-direct href="${direct(it.n, it.opts ? it.opts[0][0] : '', first)}" target="_blank" rel="noopener" aria-label="Commander ${esc(it.n)} directement sur WhatsApp" title="Commander directement sur WhatsApp">${icon.wa}</a>
             <a class="btn btn--glovo btn--sm" href="${GLOVO}" target="_blank" rel="noopener" aria-label="Commander ${esc(it.n)} sur Glovo">Glovo</a>
           </div>
         </div>

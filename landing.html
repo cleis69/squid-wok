@@ -2,156 +2,239 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Commander chez Squid Wok | WhatsApp ou Glovo · Marrakech</title>
-<meta name="description" content="Commande ton wok Squid Wok sur WhatsApp au prix carte, ou sur Glovo. Nouilles, riz sauté, pad thaï dès 59 DH. Rue Ibn Qodama, Marrakech.">
-<meta name="theme-color" content="#0f3f3a">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Commande Squid Wok en direct | Wok, Pad Thaï · Marrakech</title>
+<meta name="description" content="Commande ton wok Squid Wok en direct sur WhatsApp, au prix carte. Nouilles, riz sauté, pad thaï dès 59 DH. Rue Ibn Qodama, Marrakech.">
+<meta name="theme-color" content="#1d6b63">
+<meta name="robots" content="noindex"><!-- preview : retirer à la mise en ligne finale -->
+<link rel="preconnect" href="https://images.unsplash.com">
 <meta name="robots" content="noindex"><!-- preview : retirer à la mise en ligne finale -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://images.unsplash.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Figtree:wght@400;600;700;800&family=Kaushan+Script&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=3">
+<link rel="stylesheet" href="assets/style.css?v=5">
 <style>
-  .lp-hero{padding:clamp(36px,5vw,64px) 0 clamp(80px,9vw,120px)}
-  .lp-hero h1{font-size:clamp(3.4rem,8.4vw,7.6rem)}
-  .lp-hero .plate{width:min(100%,480px)}
-  .perks{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-  .perk{display:flex;gap:14px;align-items:flex-start;background:var(--paper);border:2px solid var(--cream-2);border-radius:var(--radius-sm);padding:20px}
-  .perk i{flex:none;width:44px;height:44px;border-radius:12px;background:var(--teal);color:var(--orange);display:grid;place-items:center;font-style:normal;font-family:var(--display);font-size:1.3rem}
-  .perk b{display:block;font-family:var(--display);font-weight:400;font-size:1.35rem;text-transform:uppercase;color:var(--teal);line-height:1.05;margin-bottom:4px}
-  .perk span{font-size:.9rem;color:#3d5a56}
-  .how{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .how div{border-top:4px solid var(--orange);padding-top:16px}
-  .how b{font-family:var(--display);font-weight:400;font-size:2.6rem;color:var(--orange);line-height:1}
-  .how h3{font-family:var(--display);font-weight:400;font-size:1.7rem;text-transform:uppercase;margin:6px 0}
-  .how p{opacity:.85}
-  .faq{max-width:860px}
-  .faq details{border-bottom:2px solid var(--cream-2);padding:18px 0}
-  .faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;font-family:var(--display);font-size:clamp(1.3rem,2.4vw,1.8rem);text-transform:uppercase;color:var(--teal);min-height:44px}
+  .lp-hero{padding:calc(var(--top-h) + 100px) 0 0;position:relative}
+  .lp-hero__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,64px);align-items:center}
+  .lp-hero h1{font-size:clamp(3.6rem,9.5vw,9rem);color:var(--teal)}
+  .lp-hero h1 em{font-style:normal;color:var(--orange)}
+  .lp-hero .script{font-size:clamp(1.6rem,3vw,2.4rem);color:var(--orange-deep);display:inline-block;transform:rotate(-4deg)}
+  .lp-hero p.lead{font-size:1.15rem;max-width:480px;margin:22px 0 30px;color:var(--teal-deep)}
+  .ctas{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .ctas small{display:block;width:100%;font-size:.82rem;color:var(--teal-deep);opacity:.8;margin-top:6px}
+  .plate{position:relative;aspect-ratio:1;border-radius:50%;background:var(--teal);padding:7%}
+  .plate::before{content:"";position:absolute;inset:-14px;border-radius:50%;border:3px dashed var(--orange);animation:spin 40s linear infinite}
+  .plate img{width:100%;height:100%;object-fit:cover;border-radius:50%;box-shadow:0 30px 60px rgba(8,35,31,.35)}
+  .plate .sticker{top:-4%;right:-2%}
+  .plate .tag{position:absolute;left:-6%;bottom:12%;background:var(--cream);border:3px solid var(--teal-ink);border-radius:18px;padding:12px 16px;box-shadow:6px 6px 0 var(--teal-ink);transform:rotate(-5deg)}
+  .plate .tag b{font-family:var(--display);font-weight:400;font-size:1.6rem;color:var(--teal);display:block;line-height:1}
+  .plate .tag span{font-size:.78rem;font-weight:700}
+
+  .proof{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:clamp(48px,7vw,88px)}
+  .proof div{background:var(--white);border:2px solid var(--cream-2);border-radius:var(--radius-sm);padding:18px;text-align:center}
+  .proof b{font-family:var(--display);font-weight:400;font-size:2.2rem;color:var(--orange-deep);display:block;line-height:1}
+  .proof span{font-size:.82rem;font-weight:700;color:var(--teal-deep)}
+
+  .why{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,24px)}
+  .why article{border-radius:var(--radius);padding:clamp(24px,3vw,36px);min-height:300px;display:flex;flex-direction:column;gap:14px}
+  .why article:nth-child(1){background:var(--teal);color:var(--cream)}
+  .why article:nth-child(2){background:var(--orange);color:var(--teal-ink)}
+  .why article:nth-child(3){background:var(--teal-ink);color:var(--cream)}
+  .why .num{font-family:var(--display);font-size:4.5rem;line-height:.8;opacity:.25}
+  .why h3{font-family:var(--display);font-weight:400;font-size:clamp(2rem,3vw,2.6rem);text-transform:uppercase;line-height:.95}
+  .why p{font-weight:500;opacity:.92}
+  .compare{margin-top:auto;display:flex;gap:10px;align-items:baseline;font-weight:800}
+  .compare s{opacity:.6}
+  .compare b{font-family:var(--display);font-weight:400;font-size:2rem;color:var(--orange)}
+
+
+  .offer{background:var(--teal);color:var(--cream);border-radius:var(--radius);padding:clamp(36px,6vw,80px);display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(24px,4vw,56px);align-items:center;position:relative;overflow:hidden}
+  .offer h2{font-size:clamp(3rem,7vw,6rem)}
+  .offer h2 em{font-style:normal;color:var(--orange)}
+  .offer ul{list-style:none;display:grid;gap:12px;margin:24px 0 30px}
+  .offer li{display:flex;gap:12px;align-items:center;font-weight:600}
+  .offer li::before{content:"✺";color:var(--orange);font-size:1.2rem}
+
+  .how{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:h}
+  .how div{border-top:4px solid var(--teal);padding-top:20px}
+  .how div::before{counter-increment:h;content:"0" counter(h);font-family:var(--display);font-size:3.4rem;color:var(--orange);display:block;line-height:1}
+  .how h3{font-family:var(--display);font-weight:400;font-size:1.9rem;text-transform:uppercase;color:var(--teal);margin:8px 0}
+
+  .faq{max-width:860px;margin:0 auto}
+  .faq details{border-bottom:2px solid var(--cream-2);padding:20px 0}
+  .faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;font-family:var(--display);font-size:clamp(1.4rem,2.6vw,2rem);text-transform:uppercase;color:var(--teal)}
   .faq summary::-webkit-details-marker{display:none}
-  .faq summary::after{content:"+";flex:none;width:36px;height:36px;border-radius:50%;background:var(--orange);color:var(--ink);display:grid;place-items:center;transition:transform .3s var(--ease)}
+  .faq summary::after{content:"+";color:var(--orange);transition:transform .3s var(--ease)}
   .faq details[open] summary::after{transform:rotate(45deg)}
-  .faq p{margin-top:10px;color:#3d5a56;max-width:680px}
-  .final{text-align:center}
-  .final h2{font-size:clamp(3.2rem,10vw,8rem)}
-  .final h2 em{font-style:normal;color:var(--orange)}
-  .final .btns{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:28px}
-  @media (max-width:900px){.perks,.how{grid-template-columns:1fr}}
+  .faq p{margin-top:12px;color:var(--teal-deep);max-width:680px}
+
+  .final{background:var(--orange);border-radius:var(--radius);margin:0 var(--gutter);padding:clamp(56px,8vw,110px) var(--gutter);text-align:center;color:var(--teal-ink)}
+  .final h2{font-size:clamp(3.6rem,12vw,10rem)}
+  .final h2 span{color:var(--cream)}
+  .final .ctas{justify-content:center;margin-top:30px}
+
+  @media (max-width:640px){
+    .lp-hero .ctas{display:grid;grid-template-columns:1fr 1fr}
+    .lp-hero .ctas .btn:first-child,.lp-hero .ctas small{grid-column:1/-1}
+    .lp-hero .ctas .btn{padding-inline:.6em}
+  }
+  @media (max-width:900px){
+    .lp-hero__grid,.offer{grid-template-columns:1fr}
+    .plate{max-width:440px;margin:20px auto 0;width:86%}
+    .why,.how{grid-template-columns:1fr}
+    .proof{grid-template-columns:1fr 1fr}
+  }
 </style>
 </head>
 <body>
 
-<div class="topbar">Prix carte sur WhatsApp<span class="hide-sm"> · aussi disponible sur Glovo</span></div>
-
+<div class="site-top">
+<div class="topbar"><a href="https://wa.me/212708088139" target="_blank" rel="noopener">Commande en direct sur WhatsApp · 07 08 08 81 39</a></div>
 <header class="header">
-  <div class="wrap header__in">
-    <a href="index.html" class="logo" aria-label="Squid Wok, site"><span class="logo__main">Squid <span>Wok</span></span><span class="logo__sub">Asian fusion · Marrakech</span></a>
-    <div class="header__cta">
-      <a class="btn btn--glovo btn--sm" href="https://glovoapp.com/fr/ma/marrakech/stores/squid-wok-mar" target="_blank" rel="noopener" style="display:inline-flex">Glovo</a>
-      <a class="btn btn--wa btn--sm" href="#carte" data-open aria-label="Commander sur WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7a11.6 11.6 0 0 1-4.5-4c-.4-.5-1-1.5-1-2.8 0-1.3.7-2 1-2.3.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.6-.1 1.2z"/></svg><span>WhatsApp</span></a>
-    </div>
+  <a href="index.html" class="logo" aria-label="Squid Wok, site" style="grid-column:1;justify-self:start;align-items:flex-start"><span class="logo__main">Squid <span>Wok</span></span><span class="logo__sub">Asian fusion</span></a>
+  <span></span>
+  <div class="header__actions">
+    <a class="btn btn--glovo btn--sm" href="https://glovoapp.com/fr/ma/marrakech/stores/squid-wok-mar" target="_blank" rel="noopener" style="display:inline-flex">Glovo</a>
+    <a class="btn btn--wa btn--sm" href="#carte" data-open aria-label="Commander sur WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7a11.6 11.6 0 0 1-4.5-4c-.4-.5-1-1.5-1-2.8 0-1.3.7-2 1-2.3.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.6-.1 1.2z"/></svg><span>WhatsApp</span></a>
   </div>
 </header>
+</div>
 
 <main>
 
-<section class="hero lp-hero dots">
-  <div class="wrap hero__grid">
-    <div class="reveal">
-      <span class="hero__kicker script">Faim de voyage ?</span>
-      <h1 class="display">Commande<br>ton wok<br><em>en direct</em></h1>
-      <p class="hero__lead">Choisis tes plats, on reçoit ta commande sur WhatsApp au prix de la carte. Tu préfères la livraison Glovo ? C'est aussi possible.</p>
-      <div class="hero__ctas">
-        <a class="btn btn--orange" href="#carte">Voir la carte</a>
-        <a class="btn btn--glovo" href="https://glovoapp.com/fr/ma/marrakech/stores/squid-wok-mar" target="_blank" rel="noopener">Glovo</a>
-      </div>
-      <div class="proof">
-        <span><b>4,7★</b> Google</span>
-        <span><b>92 %</b> recommandent sur Glovo</span>
-      </div>
-    </div>
-    <div class="plate">
-      <div class="plate__sun" aria-hidden="true"></div>
-      <div class="plate__ring" aria-hidden="true"></div>
-      <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?w=900&h=900&q=75&auto=format&fit=crop" alt="Nouilles sautées au wok" width="900" height="900" fetchpriority="high">
-      <div class="tag tag--a"><b>Nouilles sautées</b><small>Top vente · dès</small> <em>59 DH</em></div>
-    </div>
-  </div>
-  <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path fill="currentColor" d="M0,60 C240,10 480,10 720,45 C960,80 1200,80 1440,35 L1440,90 L0,90 Z"/></svg>
-</section>
-
-<section class="section" style="padding-bottom:0">
-  <div class="wrap perks">
-    <div class="perk reveal"><i>DH</i><div><b>Le prix carte</b><span>Ex. nouilles poulet : 69 DH en direct, 79 DH sur Glovo.</span></div></div>
-    <div class="perk reveal"><i>1</i><div><b>Un seul message</b><span>Ton panier part tout prêt sur WhatsApp, total compris.</span></div></div>
-    <div class="perk reveal"><i>✺</i><div><b>Fait minute</b><span>Chaque plat est sauté au wok au moment de la commande.</span></div></div>
-  </div>
-</section>
-
-<section class="section" id="compose">
+<!-- HERO -->
+<section class="lp-hero">
   <div class="wrap">
-    <div class="head reveal">
-      <h2 class="display"><span class="head__kicker script">le plus rapide</span>Compose<br>ton <em>wok</em></h2>
-      <p>Une base, une protéine, et c'est dans ton panier.</p>
+    <div class="lp-hero__grid">
+      <div>
+        <span class="script">Faim de voyage ?</span>
+        <h1 class="display">Ton wok,<br><em>en direct</em><br>au prix carte</h1>
+        <p class="lead">Nouilles sautées, pad thaï, riz sauté ou wok saté, préparés minute au feu vif. Ajoute tes plats, envoie ta commande sur WhatsApp en un message, ou commande sur Glovo.</p>
+        <div class="ctas">
+          <a class="btn btn--orange" href="#carte">Voir la carte</a>
+          <a class="btn btn--wa" href="#carte" data-open><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7a11.6 11.6 0 0 1-4.5-4c-.4-.5-1-1.5-1-2.8 0-1.3.7-2 1-2.3.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.6-.1 1.2z"/></svg>WhatsApp</a>
+          <a class="btn btn--glovo" href="https://glovoapp.com/fr/ma/marrakech/stores/squid-wok-mar" target="_blank" rel="noopener">Glovo</a>
+          <small>Sur place & à emporter Rue Ibn Qodama, Marrakech</small>
+        </div>
+      </div>
+      <div class="plate">
+        <img src="https://images.unsplash.com/photo-1559314809-0d155014e29e?w=1200&q=80&auto=format&fit=crop" alt="Pad thaï aux gambas">
+        <div class="sticker" aria-hidden="true">
+          <svg viewBox="0 0 200 200"><defs><path id="c3" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs><text font-family="Figtree" font-weight="800" font-size="15" letter-spacing="5" fill="#08231f"><textPath href="#c3">SAUTÉ MINUTE · AU FEU VIF · </textPath></text></svg>
+          <strong>59<small>DH · DÈS</small></strong>
+        </div>
+        <div class="tag"><b>Pad Thaï</b><span>Végé · Poulet · Bœuf · Gambas</span></div>
+      </div>
     </div>
-    <div class="builder" id="builder"></div>
+    <div class="proof">
+      <div><b>4,7★</b><span>Note Google</span></div>
+      <div><b>92%</b><span>Recommandent sur Glovo</span></div>
+      <div><b>4</b><span>Protéines au choix</span></div>
+      <div><b>100%</b><span>Desserts faits maison</span></div>
+    </div>
   </div>
 </section>
 
+<div class="marquee" aria-hidden="true"><div class="marquee__track">
+  <span>Prix carte</span><span>Zéro commission</span><span>Commande en 1 message</span><span>Fait minute</span>
+</div></div>
+
+<!-- WHY -->
+<section class="section">
+  <div class="wrap">
+    <div class="head">
+      <h2 class="display"><span class="script">pourquoi en direct ?</span>Moins cher,<br>plus simple</h2>
+      <p>Commander en direct, c'est payer le prix de la carte et soutenir directement le restaurant.</p>
+    </div>
+    <div class="why">
+      <article>
+        <span class="num">01</span>
+        <h3>Le prix carte, point.</h3>
+        <p>Les plateformes ajoutent leur commission sur chaque plat. Chez nous, tu paies le prix affiché au restaurant.</p>
+        <div class="compare"><span>Nouilles poulet</span><s>79 DH</s><b>69 DH</b></div>
+      </article>
+      <article>
+        <span class="num">02</span>
+        <h3>Un message suffit</h3>
+        <p>Ton panier part sur WhatsApp avec le total. Un seul plat ? Le bouton WhatsApp l'envoie directement.</p>
+      </article>
+      <article>
+        <span class="num">03</span>
+        <h3>Fait minute</h3>
+        <p>Chaque plat est sauté au wok au moment de ta commande, avec des légumes croquants.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CARTE COMPLETE -->
 <section class="section" id="carte" style="padding-top:0;padding-bottom:clamp(32px,5vw,64px)">
   <div class="wrap">
-    <div class="head reveal">
-      <h2 class="display"><span class="head__kicker script">toute la carte</span>Le <em>menu</em></h2>
-      <p>Ajoute tes plats au panier puis envoie la commande sur WhatsApp. Ou commande directement sur Glovo.</p>
+    <div class="head">
+      <h2 class="display"><span class="script">toute la carte</span>Le menu</h2>
+      <p>Ajoute au panier, envoie un plat directement sur WhatsApp, ou commande sur Glovo.</p>
     </div>
   </div>
   <div id="menu"></div>
 </section>
 
-<section class="section section--teal dots">
+<!-- OFFRE -->
+<section class="wrap" id="offre">
+  <div class="offer">
+    <div>
+      <span class="eyebrow" style="color:var(--orange)">Offre spéciale étudiant</span>
+      <h2 class="display" style="margin-top:10px">Voyage <em>sans</em><br>quitter Marrakech</h2>
+      <p style="margin:20px 0 28px;max-width:420px">On te fait voyager sans quitter Marrakech. Demande les détails de l'offre sur WhatsApp ou au comptoir.</p>
+      <a class="btn btn--orange" target="_blank" rel="noopener" href="https://wa.me/212708088139?text=Bonjour%20!%20Je%20veux%20profiter%20de%20l'offre%20%C3%A9tudiant">Demander l'offre</a>
+    </div>
+    <img src="https://images.unsplash.com/photo-1617093727343-374698b1b08d?w=700&q=75&auto=format&fit=crop" alt="" loading="lazy" style="border-radius:24px;width:100%;aspect-ratio:1;object-fit:cover">
+  </div>
+</section>
+
+<!-- HOW -->
+<section class="section">
   <div class="wrap">
-    <div class="head reveal"><h2 class="display"><span class="head__kicker script">simple comme bonjour</span>Comment ça <em>marche</em></h2></div>
+    <div class="head"><h2 class="display"><span class="script">simple comme bonjour</span>Comment ça marche</h2></div>
     <div class="how">
-      <div class="reveal"><b>01</b><h3>Choisis</h3><p>Tes plats, ta protéine et ton dessert maison.</p></div>
-      <div class="reveal"><b>02</b><h3>Envoie</h3><p>Ta commande part sur WhatsApp, au 07 08 08 81 39.</p></div>
-      <div class="reveal"><b>03</b><h3>Savoure</h3><p>On te confirme le délai. Retrait Rue Ibn Qodama ou livraison.</p></div>
+      <div><h3>Choisis</h3><p>Ton plat, ta protéine (végé, poulet, bœuf, gambas), ton dessert maison.</p></div>
+      <div><h3>Envoie</h3><p>Ta commande sur WhatsApp au 07 08 08 81 39, sur Glovo, ou appelle le 08 08 69 76 67.</p></div>
+      <div><h3>Savoure</h3><p>Récupère-la Rue Ibn Qodama ou fais-toi livrer. Bon voyage !</p></div>
     </div>
   </div>
 </section>
 
-<section class="section">
+<!-- FAQ -->
+<section class="section" style="padding-top:0">
   <div class="wrap faq">
     <div class="head"><h2 class="display">Questions</h2></div>
     <details><summary>Vous livrez où ?</summary><p>[À confirmer] Zone de livraison directe. Partout ailleurs à Marrakech, commande sur Glovo.</p></details>
     <details><summary>Quels sont vos horaires ?</summary><p>[À confirmer]</p></details>
-    <details><summary>Il y a des options végétariennes ?</summary><p>Oui : nouilles, riz sauté, wok saté, pad thaï, nems et rouleaux de printemps existent en version végétarienne.</p></details>
-    <details><summary>Et les allergies ?</summary><p>Certains plats contiennent arachides, crustacés, gluten ou soja. Précise-le dans ton message.</p></details>
+    <details><summary>Il y a des options végétariennes ?</summary><p>Oui : tous nos plats wok, nems et rouleaux de printemps existent en version végétarienne.</p></details>
+    <details><summary>Et les allergies ?</summary><p>Certains plats contiennent arachides, crustacés, gluten ou soja. Précise-le dans ton message, on adapte quand c'est possible.</p></details>
   </div>
 </section>
 
-<section class="section section--teal dots final">
-  <div class="wrap">
-    <h2 class="display">Ça creuse ?<br><em>On s'en occupe.</em></h2>
-    <div class="btns">
-      <a class="btn btn--wa" href="#carte" data-open>Commander sur WhatsApp</a>
-      <a class="btn btn--glovo" href="https://glovoapp.com/fr/ma/marrakech/stores/squid-wok-mar" target="_blank" rel="noopener">Commander sur Glovo</a>
-    </div>
+<!-- FINAL -->
+<section class="final">
+  <h2 class="display">Ça creuse ?<br><span>On s'en occupe.</span></h2>
+  <div class="ctas">
+    <a class="btn btn--wa" href="#carte" data-open><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7a11.6 11.6 0 0 1-4.5-4c-.4-.5-1-1.5-1-2.8 0-1.3.7-2 1-2.3.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.6-.1 1.2z"/></svg>Commander sur WhatsApp</a>
+    <a class="btn btn--glovo" href="https://glovoapp.com/fr/ma/marrakech/stores/squid-wok-mar" target="_blank" rel="noopener">Commander sur Glovo</a>
   </div>
 </section>
 
 </main>
 
-<footer class="footer" style="padding-top:40px">
+<footer class="footer">
   <div class="wrap">
     <div class="footer__legal" style="margin-top:0;border:0;padding-top:0">
-      <span>© 2026 Squid Wok · Rue Ibn Qodama, Marrakech · <a href="tel:+212808697667">08 08 69 76 67</a></span>
-      <span><a href="index.html">Site</a> · <a href="https://www.instagram.com/squidwokmarrakech/" target="_blank" rel="noopener">Instagram</a></span>
+      <span>© 2026 Squid Wok · Rue Ibn Qodama, Marrakech</span>
+      <span><a href="index.html">Site</a> · <a href="https://www.instagram.com/squidwokmarrakech/" target="_blank" rel="noopener">Instagram</a> · <a href="https://glovoapp.com/fr/ma/marrakech/stores/squid-wok-mar" target="_blank" rel="noopener">Glovo</a></span>
     </div>
   </div>
 </footer>
 
-<script src="assets/menu.js?v=3"></script>
-<script src="assets/main.js?v=3"></script>
+<script src="assets/menu.js?v=5"></script>
+<script src="assets/main.js?v=5"></script>
 </body>
 </html>
