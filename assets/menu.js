@@ -177,7 +177,11 @@
       if (en.isIntersecting) links.forEach(l => {
         const on = l.getAttribute('href') === '#' + en.target.id;
         l.classList.toggle('on', on);
-        if (on) l.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+        if (on) {
+          // défilement horizontal de la barre uniquement (ne touche jamais au scroll vertical de la page)
+          const bar = l.parentElement;
+          bar.scrollTo({ left: l.offsetLeft - (bar.clientWidth - l.offsetWidth) / 2, behavior: 'smooth' });
+        }
       });
     }), { rootMargin: '-45% 0px -50% 0px' });
     menuEl.querySelectorAll('.menu-cat').forEach(s => io.observe(s));
