@@ -72,8 +72,9 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 .topbar{height:var(--top-h);display:flex;align-items:center;justify-content:center;gap:.5em;background:var(--orange);color:var(--teal-ink);font-weight:800;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;padding:0 var(--gutter);white-space:nowrap;overflow:hidden}
 .topbar a{text-underline-offset:3px}
 .topbar a:hover{text-decoration:underline}
-.header{position:relative;padding:14px var(--gutter);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;transition:background .3s,padding .3s,box-shadow .3s}
-.header.is-scrolled{background:var(--cream);padding-block:8px;box-shadow:0 1px 0 var(--cream-2)}
+.header{position:relative;padding:14px var(--gutter);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;background:var(--cream);transition:padding .3s,box-shadow .3s}
+/* Fond crème permanent : le header ne devient jamais transparent au scroll */
+.header.is-scrolled{padding-block:8px;box-shadow:0 1px 0 var(--cream-2),0 8px 24px rgba(8,35,31,.08)}
 .menu-open .header{background:transparent;box-shadow:none}
 .menu-open .header .logo__main{color:var(--cream)}
 .menu-open .header .header__actions{visibility:hidden}
