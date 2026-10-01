@@ -105,7 +105,6 @@
         </div>
         <div class="drawer__total"><span>Total</span><b>0 DH</b></div>
         <a class="btn btn--wa btn--block" id="send" target="_blank" rel="noopener">${icon.wa}Envoyer sur WhatsApp</a>
-        <a class="btn btn--glovo btn--block" href="${GLOVO}" target="_blank" rel="noopener">Commander sur Glovo</a>
         <p class="drawer__note">Prix carte. Le restaurant confirme ta commande et le délai sur WhatsApp.</p>
       </div>
     </aside>`;
