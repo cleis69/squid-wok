@@ -18,7 +18,7 @@
   --shadow:0 18px 40px rgba(8,35,31,.14);
   --radius:28px;
   --radius-sm:16px;
-  --display:'Righteous', 'Anton', system-ui, sans-serif;
+  --display:'Anton', 'Bebas Neue', Impact, sans-serif;
   --body:'Figtree', system-ui, sans-serif;
   --script:'Kaushan Script', cursive;
   --gutter:clamp(16px,4vw,48px);
@@ -34,7 +34,7 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 :focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:6px}
 
 .wrap{width:100%;max-width:1320px;margin:0 auto;padding:0 var(--gutter)}
-.display{font-family:var(--display);text-transform:uppercase;line-height:.98;letter-spacing:0;font-weight:400}
+.display{font-family:var(--display);text-transform:uppercase;line-height:.9;letter-spacing:.005em;font-weight:400}
 .script{font-family:var(--script);text-transform:none;letter-spacing:0}
 .eyebrow{display:inline-block;font-weight:800;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase}
 
@@ -58,7 +58,7 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 
 
 /* ---------- Logo (lettrage du logo Instagram, sans la pieuvre) ---------- */
-.logo{display:inline-flex;flex-direction:column;align-items:center;font-family:var(--display);text-transform:uppercase;white-space:nowrap;line-height:.86}
+.logo{display:inline-flex;flex-direction:column;align-items:center;font-family:'Righteous', var(--display);text-transform:uppercase;white-space:nowrap;line-height:.86}
 .logo__main{display:flex;flex-direction:column;align-items:center;font-size:clamp(1.45rem,2.2vw,1.9rem);color:var(--cream);-webkit-text-stroke:0;text-shadow:-1.5px -1.5px 0 var(--teal-deep),1.5px -1.5px 0 var(--teal-deep),-1.5px 1.5px 0 var(--teal-deep),1.5px 1.5px 0 var(--teal-deep),3px 3px 0 var(--orange)}
 .logo__main span{display:block;color:var(--cream)}
 .logo__sub{font-family:var(--body);font-weight:800;font-size:.5rem;letter-spacing:.3em;color:var(--orange-deep);margin-top:5px}
@@ -91,7 +91,7 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 .nav{position:fixed;inset:0;z-index:45;padding-top:calc(var(--top-h) + 110px)!important;background:var(--teal);color:var(--cream);display:flex;flex-direction:column;justify-content:center;padding:120px var(--gutter) 40px;clip-path:circle(0% at 40px 40px);transition:clip-path .7s var(--ease);overflow:auto}
 .menu-open .nav{clip-path:circle(150% at 40px 40px)}
 .nav ul{list-style:none}
-.nav li a{min-height:44px;font-family:var(--display);font-size:clamp(2rem,7vw,4.6rem);text-transform:uppercase;line-height:1.02;display:inline-block;transition:color .2s,transform .3s var(--ease)}
+.nav li a{min-height:44px;font-family:var(--display);font-size:clamp(2.6rem,9vw,6rem);text-transform:uppercase;line-height:1.02;display:inline-block;transition:color .2s,transform .3s var(--ease)}
 .nav li a:hover{color:var(--orange);transform:translateX(12px)}
 .nav__foot{margin-top:40px;display:flex;flex-wrap:wrap;gap:24px;font-weight:700;opacity:.85}
 
@@ -103,7 +103,7 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 @keyframes heroZoom{to{transform:scale(1)}}
 .hero__media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,35,31,.05) 30%,rgba(8,35,31,.85) 100%)}
 .hero__content{position:relative;z-index:2;padding:clamp(24px,5vw,64px);color:var(--cream);width:100%;display:grid;gap:22px}
-.hero__title{font-size:clamp(2.7rem,9.6vw,9rem)}
+.hero__title{font-size:clamp(3.6rem,13vw,12rem)}
 .hero__title em{font-style:normal;color:var(--orange)}
 .hero__row{display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between}
 .hero__row p{max-width:440px;font-size:1.08rem;opacity:.92}
@@ -112,7 +112,7 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 /* Sticker rond tournant */
 .sticker{position:absolute;z-index:3;width:clamp(110px,14vw,170px);aspect-ratio:1;border-radius:50%;background:var(--orange);color:var(--teal-ink);display:grid;place-items:center;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.25)}
 .sticker svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 18s linear infinite}
-.sticker strong{font-family:var(--display);font-weight:400;font-size:clamp(1.3rem,2.4vw,2rem);line-height:.9}
+.sticker strong{font-family:var(--display);font-weight:400;font-size:clamp(1.6rem,3vw,2.4rem);line-height:.9}
 .sticker strong small{display:block;font-family:var(--body);font-size:.32em;font-weight:800;letter-spacing:.1em}
 @keyframes spin{to{transform:rotate(360deg)}}
 .hero .sticker{top:clamp(20px,4vw,48px);right:clamp(20px,4vw,48px)}
@@ -121,14 +121,14 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 .marquee{overflow:hidden;background:var(--orange);color:var(--teal-ink);padding:16px 0;transform:rotate(-1.5deg);margin:48px -10px 0;border-block:3px solid var(--teal-ink)}
 .marquee--teal{background:var(--teal);color:var(--cream);transform:rotate(1.2deg);border-color:var(--orange)}
 .marquee__track{display:flex;gap:40px;width:max-content;animation:marquee 32s linear infinite}
-.marquee span{font-family:var(--display);font-size:clamp(1.3rem,2.8vw,2.2rem);text-transform:uppercase;white-space:nowrap;display:flex;align-items:center;gap:40px}
+.marquee span{font-family:var(--display);font-size:clamp(1.6rem,3.6vw,2.8rem);text-transform:uppercase;white-space:nowrap;display:flex;align-items:center;gap:40px}
 .marquee span::after{content:"✺";color:currentColor;font-size:.7em}
 @keyframes marquee{to{transform:translateX(-50%)}}
 
 /* ---------- Section heads ---------- */
 .section{padding:clamp(72px,10vw,140px) 0}
 .head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:clamp(36px,5vw,64px)}
-.head h2{font-size:clamp(2.4rem,6.4vw,5.4rem);color:var(--teal)}
+.head h2{font-size:clamp(3rem,8vw,7rem);color:var(--teal)}
 .head h2 .script{color:var(--orange);font-size:.42em;display:block;transform:rotate(-3deg);margin-bottom:.35em;line-height:1.2}
 .head p{max-width:420px;color:var(--teal-deep)}
 
@@ -139,7 +139,7 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 .cat__img img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
 .cat:hover .cat__img img{transform:scale(1.07) rotate(-1deg)}
 .cat__price{position:absolute;top:14px;left:14px;background:var(--orange);color:var(--teal-ink);font-family:var(--display);font-size:1.3rem;padding:.25em .7em;border-radius:999px;transform:rotate(-6deg)}
-.cat h3{font-family:var(--display);font-weight:400;font-size:clamp(1.15rem,2.4vw,2rem);text-transform:uppercase;line-height:1}
+.cat h3{font-family:var(--display);font-weight:400;font-size:clamp(1.6rem,3vw,2.4rem);text-transform:uppercase;line-height:1}
 .cat__cta{font-weight:800;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--orange-deep);display:inline-flex;gap:.4em;justify-content:center;align-items:center}
 .cat__cta::after{content:"→";transition:transform .3s var(--ease)}
 .cat:hover .cat__cta::after{transform:translateX(6px)}
@@ -150,18 +150,18 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 .story__media{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5}
 .story__media img{width:100%;height:100%;object-fit:cover}
 .story__media .sticker{bottom:24px;left:24px}
-.story h2{font-size:clamp(2.3rem,5.2vw,4.6rem);color:var(--teal)}
+.story h2{font-size:clamp(3rem,7vw,6.2rem);color:var(--teal)}
 .story h2 em{font-style:normal;color:var(--orange)}
 .story p{font-size:1.12rem;margin-top:22px;max-width:520px;color:var(--teal-deep)}
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
 .stat{background:var(--white);border-radius:var(--radius-sm);padding:18px;border:2px solid var(--cream-2)}
-.stat b{font-family:var(--display);font-weight:400;font-size:clamp(1.6rem,3.2vw,2.5rem);color:var(--orange-deep);display:block;line-height:1}
+.stat b{font-family:var(--display);font-weight:400;font-size:clamp(2rem,4vw,3rem);color:var(--orange-deep);display:block;line-height:1}
 .stat span{font-size:.82rem;font-weight:700;color:var(--teal-deep)}
 
 /* ---------- Promo cards (pattern "Izaberi obrok / Postani deo ekipe") ---------- */
 .promos{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.5vw,28px)}
 .promo{position:relative;border-radius:var(--radius);overflow:hidden;min-height:440px;padding:clamp(24px,4vw,44px);display:flex;flex-direction:column;justify-content:space-between;isolation:isolate}
-.promo h3{font-size:clamp(2.3rem,4.2vw,4rem);max-width:9ch}
+.promo h3{font-size:clamp(3rem,6vw,5.4rem);max-width:8ch}
 .promo p{max-width:min(260px,48%);font-weight:700;text-transform:uppercase;font-size:.85rem;letter-spacing:.05em}
 .promo img{position:absolute;right:-8%;bottom:-8%;width:56%;aspect-ratio:1;object-fit:cover;border-radius:50%;z-index:-1;transition:transform .9s var(--ease);box-shadow:0 20px 50px rgba(0,0,0,.3)}
 .promo:hover img{transform:rotate(-8deg) scale(1.05)}
@@ -179,7 +179,7 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 .catnav a.on,.catnav a:hover{background:var(--teal);border-color:var(--teal);color:var(--cream)}
 .menu-cat{margin-bottom:clamp(40px,6vw,64px)}
 .menu-cat__title{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;margin-bottom:18px}
-.menu-cat__title h3{font-family:var(--display);font-weight:400;font-size:clamp(1.8rem,3.6vw,2.8rem);text-transform:uppercase;color:var(--teal);line-height:1}
+.menu-cat__title h3{font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,4.4vw,3.4rem);text-transform:uppercase;color:var(--teal);line-height:1}
 .menu-cat__title span{font-weight:700;font-size:.9rem;color:var(--orange-deep)}
 .dishes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .dish{display:grid;grid-template-columns:112px minmax(0,1fr);gap:16px;background:var(--paper);border:2px solid var(--cream-2);border-radius:22px;padding:14px;transition:border-color .2s,box-shadow .25s}
@@ -188,8 +188,8 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 .dish__img{width:112px;height:112px;border-radius:16px;object-fit:cover;background:var(--cream-2)}
 .dish__body{display:flex;flex-direction:column;gap:8px;min-width:0}
 .dish__top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
-.dish h4{font-family:var(--display);font-weight:400;font-size:1.2rem;text-transform:uppercase;line-height:1;color:var(--ink)}
-.dish__price{font-family:var(--display);font-size:1.4rem;line-height:1;color:var(--orange-deep);white-space:nowrap}
+.dish h4{font-family:var(--display);font-weight:400;font-size:1.45rem;text-transform:uppercase;line-height:1;color:var(--ink)}
+.dish__price{font-family:var(--display);font-size:1.6rem;line-height:1;color:var(--orange-deep);white-space:nowrap}
 .dish__price small{font-size:.5em;margin-left:2px}
 .dish__badge{display:inline-block;font-size:.62rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--orange);color:var(--ink);padding:.3em .6em;border-radius:6px;margin-top:6px}
 .dish p{font-size:.86rem;color:#3d5a56;line-height:1.4}
@@ -212,12 +212,12 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 .event:hover img{transform:scale(1.06);opacity:.9}
 .event div{padding:26px}
 .event .eyebrow{color:var(--orange)}
-.event h3{font-family:var(--display);font-weight:400;font-size:clamp(1.6rem,2.6vw,2.2rem);text-transform:uppercase;line-height:.95;margin:.2em 0}
+.event h3{font-family:var(--display);font-weight:400;font-size:clamp(2rem,3.4vw,2.8rem);text-transform:uppercase;line-height:.95;margin:.2em 0}
 
 /* ---------- Infos ---------- */
 .infos{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(24px,4vw,48px);align-items:stretch}
 .infos__card{background:var(--teal-deep);color:var(--cream);border-radius:var(--radius);padding:clamp(28px,4vw,52px);display:grid;gap:26px;align-content:start}
-.infos__card h2{font-size:clamp(2.4rem,4.6vw,4rem);color:var(--orange)}
+.infos__card h2{font-size:clamp(3rem,6vw,5rem);color:var(--orange)}
 .infos dl{display:grid;gap:18px}
 .infos dt{font-size:.72rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--orange)}
 .infos dd{font-size:1.15rem;font-weight:600}
@@ -322,7 +322,7 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
   .dish__img{width:84px;height:84px;border-radius:14px}
   .dish__actions{grid-column:1/-1}
   .dish--noimg .dish__actions{grid-column:auto}
-  .dish h4{font-size:1.05rem}
+  .dish h4{font-size:1.25rem}
   .cartfab{display:none}
   .mbar{display:grid;grid-template-columns:1.4fr 1fr;gap:8px;position:fixed;left:10px;right:10px;bottom:10px;z-index:70;background:var(--teal-ink);padding:8px;border-radius:22px;box-shadow:0 12px 30px rgba(0,0,0,.35)}
   .mbar .btn{min-height:50px;font-size:.76rem;padding-inline:.6em}
