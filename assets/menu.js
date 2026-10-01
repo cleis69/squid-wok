@@ -205,7 +205,7 @@
             <span class="dish__price" aria-live="polite">${first}<small>DH</small></span>
           </div>
           ${it.d ? `<p>${esc(it.d)}</p>` : ''}
-          ${it.opts ? `<div class="opts" role="group" aria-label="Choix">${it.opts.map((o, i) => `<button type="button" class="opt" data-o="${esc(o[0])}" data-p="${o[1]}" aria-pressed="${!i}">${esc(o[0])}${from ? ' · ' + o[1] : ''}</button>`).join('')}</div>` : ''}
+          ${it.opts ? `<div class="opts" role="group" aria-label="Choix">${it.opts.map((o, i) => `<button type="button" class="opt" data-o="${esc(o[0])}" data-p="${o[1]}" aria-pressed="${!i}">${esc(o[0])}${from ? ' · ' + o[1] + ' DH' : ''}</button>`).join('')}</div>` : ''}
           <div class="dish__actions">
             <button type="button" class="btn btn--wa btn--sm" data-add>${icon.plus}Ajouter</button>
             <a class="btn btn--wa btn--sm btn--icon" data-direct href="${direct(it.n, it.opts ? it.opts[0][0] : '', first)}" target="_blank" rel="noopener" aria-label="Commander ${esc(it.n)} directement sur WhatsApp" title="Commander directement sur WhatsApp">${icon.wa}</a>

@@ -112,8 +112,8 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 /* Sticker rond tournant */
 .sticker{position:absolute;z-index:3;width:clamp(110px,14vw,170px);aspect-ratio:1;border-radius:50%;background:var(--orange);color:var(--teal-ink);display:grid;place-items:center;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.25)}
 .sticker svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 18s linear infinite}
-.sticker strong{font-family:var(--display);font-weight:400;font-size:clamp(1.6rem,3vw,2.4rem);line-height:.9}
-.sticker strong small{display:block;font-family:var(--body);font-size:.32em;font-weight:800;letter-spacing:.1em}
+.sticker strong{font-family:var(--display);font-weight:400;font-size:clamp(1.6rem,3vw,2.4rem);line-height:1;display:flex;flex-direction:column;align-items:center;gap:.28em;position:relative;z-index:1}
+.sticker strong small{display:block;font-family:var(--body);font-size:.3em;font-weight:800;letter-spacing:.12em;line-height:1}
 @keyframes spin{to{transform:rotate(360deg)}}
 .hero .sticker{top:clamp(20px,4vw,48px);right:clamp(20px,4vw,48px)}
 
@@ -135,10 +135,10 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 /* ---------- Categories grid (pattern Burrito Madre) ---------- */
 .cats{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(20px,3vw,40px) clamp(16px,3vw,40px)}
 .cat{display:grid;gap:14px;text-align:center;color:var(--teal-deep)}
-.cat__img{position:relative;aspect-ratio:4/3;border-radius:var(--radius);overflow:hidden;background:var(--cream-2)}
+.cat__img{position:relative;isolation:isolate;aspect-ratio:4/3;border-radius:var(--radius);overflow:hidden;background:var(--cream-2)}
 .cat__img img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
 .cat:hover .cat__img img{transform:scale(1.07) rotate(-1deg)}
-.cat__price{position:absolute;top:14px;left:14px;background:var(--orange);color:var(--teal-ink);font-family:var(--display);font-size:1.3rem;padding:.25em .7em;border-radius:999px;transform:rotate(-6deg)}
+.cat__price{position:absolute;z-index:2;top:14px;left:14px;white-space:nowrap;background:var(--orange);color:var(--teal-ink);font-family:var(--display);font-size:1.3rem;padding:.25em .7em;border-radius:999px;transform:rotate(-6deg)}
 .cat h3{font-family:var(--display);font-weight:400;font-size:clamp(1.6rem,3vw,2.4rem);text-transform:uppercase;line-height:1}
 .cat__cta{font-weight:800;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--orange-deep);display:inline-flex;gap:.4em;justify-content:center;align-items:center}
 .cat__cta::after{content:"→";transition:transform .3s var(--ease)}
@@ -217,6 +217,9 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 /* ---------- Infos ---------- */
 .infos{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(24px,4vw,48px);align-items:stretch}
 .infos__card{background:var(--teal-deep);color:var(--cream);border-radius:var(--radius);padding:clamp(28px,4vw,52px);display:grid;gap:26px;align-content:start}
+.infos__lead{font-size:1.08rem;max-width:460px;opacity:.92}
+.infos__ctas{display:flex;gap:12px;flex-wrap:wrap}
+.infos__card dl{border-top:1px solid rgba(251,241,225,.15);padding-top:22px;grid-template-columns:1fr 1fr}
 .infos__card h2{font-size:clamp(3rem,6vw,5rem);color:var(--orange)}
 .infos dl{display:grid;gap:18px}
 .infos dt{font-size:.72rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--orange)}
@@ -321,6 +324,8 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
   .dish{grid-template-columns:84px minmax(0,1fr);gap:12px;padding:12px}
   .dish__img{width:84px;height:84px;border-radius:14px}
   .dish__actions{grid-column:1/-1}
+  .dish--noimg{grid-template-columns:minmax(0,1fr)}
+  .infos__ctas .btn{flex:1 1 100%}
   .dish--noimg .dish__actions{grid-column:auto}
   .dish h4{font-size:1.25rem}
   .cartfab{display:none}
