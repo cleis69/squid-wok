@@ -103,10 +103,10 @@
   let lastFocus;
   function openCart() {
     lastFocus = document.activeElement;
-    drawer.classList.add('open'); document.body.style.overflow = 'hidden';
+    drawer.classList.add('open'); document.documentElement.style.overflow = 'hidden';
     drawer.querySelector('.drawer__close').focus();
   }
-  function closeCart() { drawer.classList.remove('open'); document.body.style.overflow = ''; lastFocus && lastFocus.focus(); }
+  function closeCart() { drawer.classList.remove('open'); document.documentElement.style.overflow = ''; lastFocus && lastFocus.focus(); }
   drawer.addEventListener('click', e => { if (e.target.closest('[data-close]')) closeCart(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && drawer.classList.contains('open')) closeCart(); });
   fab.addEventListener('click', openCart);

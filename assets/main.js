@@ -3,10 +3,13 @@
   const root = document.documentElement;
   const burger = document.querySelector('.burger');
   if (burger) {
+    const header = document.querySelector('.header');
+    const mnav = document.querySelector('.mnav');
     const toggle = open => {
+      if (open && mnav) mnav.style.top = header.getBoundingClientRect().bottom + 'px';
       root.classList.toggle('nav-open', open);
       burger.setAttribute('aria-expanded', open);
-      document.body.style.overflow = open ? 'hidden' : '';
+      root.style.overflow = open ? 'hidden' : '';
     };
     burger.addEventListener('click', () => toggle(!root.classList.contains('nav-open')));
     document.querySelectorAll('.mnav a').forEach(a => a.addEventListener('click', () => toggle(false)));
