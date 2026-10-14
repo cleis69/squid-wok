@@ -27,18 +27,15 @@
     cheeseMangue: '19693ebc8a109cc7c336c2abb85ea66a23c6208f08ecbfa6699db255ea85823f',
     cheeseFramboise: '0ad4781265e3be5db6b546a4d756f937ae9ad0ca7452a02e94e7621637c0157d',
     mousse: '36e1022770ed9cc3b602cb5d15b716842042c67a53461df86bbada0211a64196',
-    menuPoulet: '254c81ab216e24663ea8f9c90d23c4777268ee4aaa47d667d57827e0d955cf6f',
+    nouillesPoulet: 'adc3775c2af108342ba65a3691507378df2e1b32bc965d3392656cf5f6aa81a8',
+    nouillesBoeuf: 'd669b26f07e03f34da57daa3205318e94204fc3b8b29354a88bb9bdecc7d0ae1',
+    nouillesGambas: '2914d73e303a8d2979ecbc5d6d71d2c11bc4ed53009288d4d98eb0f2251954e7',
+    riz: '4d9247643b7d7b879ab9eec486daea271d13c4da706af84dcad6569199bba637',
+    padPoulet: 'a38736d19572ed784194b0bc88b96b8089cbc2c451667aeaeae72c4b18c96fef',
+    padGambas: 'c10b74c27b8c403d55e8d8d3767482482d9e4d7c0ee0b257dedf9f9ea05f25b3',
   };
 
   const MENU = [
-    { id: 'plats', title: 'Plats', note: 'Sautés minute au wok', items: [
-      { n: 'Nouilles sautées', d: 'Carottes, chou, brocolis, champignons, poivrons.', img: '1585032226651-759b368d7246', badge: 'Top vente', opts: PROT },
-      { n: 'Riz sauté', d: 'Poivrons, oignons, gingembre, ail.', img: '1512058564366-18510be2db19', opts: PROT },
-      { n: 'Wok saté', d: 'Sauce saté, légumes croquants. Servi avec riz ou nouilles.', g: GL.wokVege, opts: [['Végé', 59, GL.wokVege], ['Poulet', 69, GL.wokPoulet], ['Bœuf', 75, GL.wokBoeuf], ['Gambas', 79, GL.wokGambas]] },
-      { n: 'Pad Thaï', d: 'Cacahuètes, sauce aigre-douce, légumes croquants.', img: '1559314809-0d155014e29e', badge: 'Signature', opts: PROT },
-      { n: 'Bœuf lôc lac', d: '100 % filet de bœuf mariné, œuf au plat, riz à la tomate.', g: GL.locLac, badge: 'Signature', p: 79 },
-      { n: 'Menu Wrap', d: 'Wrap et frites.', img: '1626700051175-6818013e1d4f', p: 59 },
-    ]},
     { id: 'entrees', title: 'Entrées & salades', note: 'À partager (ou pas)', items: [
       { n: 'Nems', d: '3 pièces.', g: GL.nems, badge: 'Signature', opts: [['Végé', 45, GL.nems], ['Poulet', 49, GL.nems], ['Gambas', 55, GL.nemsGambas]] },
       { n: 'Rouleaux de printemps', d: '3 pièces.', g: GL.rouleaux, opts: [['Végé', 45, GL.rouleaux], ['Poulet', 49, GL.rouleaux], ['Gambas', 55, GL.rouleauxGambas]] },
@@ -49,17 +46,26 @@
       { n: 'Salade César', d: '', img: '1546793665-c74683f339c1', p: 49 },
       { n: 'Salade gambas', d: '', badge: 'Choix du chef', p: 55 },
     ]},
+    { id: 'plats', title: 'Plats', note: 'Sautés minute au wok', items: [
+      { n: 'Nouilles sautées', d: 'Carottes, chou, brocolis, champignons, poivrons.', img: '1585032226651-759b368d7246', badge: 'Top vente', opts: PROT },
+      { n: 'Riz sauté', d: 'Poivrons, oignons, gingembre, ail.', img: '1512058564366-18510be2db19', opts: PROT },
+      { n: 'Wok saté', d: 'Sauce saté, légumes croquants. Servi avec riz ou nouilles.', g: GL.wokVege, opts: [['Végé', 59, GL.wokVege], ['Poulet', 69, GL.wokPoulet], ['Bœuf', 75, GL.wokBoeuf], ['Gambas', 79, GL.wokGambas]] },
+      { n: 'Pad Thaï', d: 'Cacahuètes, sauce aigre-douce, légumes croquants.', img: '1559314809-0d155014e29e', badge: 'Signature', opts: PROT },
+      { n: 'Bœuf lôc lac', d: '100 % filet de bœuf mariné, œuf au plat, riz à la tomate.', g: GL.locLac, badge: 'Signature', p: 79 },
+      { n: 'Menu Wrap', d: 'Wrap et frites.', img: '1626700051175-6818013e1d4f', p: 59 },
+    ]},
+    { id: 'formules', title: 'Menus', note: 'Entrée + plat + boisson', items: [
+      { n: 'Menu poulet', d: 'Brochettes de poulet panées au cheddar + 1 plat poulet au choix + 1 boisson.', g: GL.nouillesPoulet, p: 129, opts: [['Nouilles sautées', 129, GL.nouillesPoulet], ['Riz sauté', 129, GL.riz], ['Wok saté', 129, GL.wokPoulet], ['Pad Thaï', 129, GL.padPoulet]] },
+      { n: 'Menu bœuf', d: 'Nems végétariens + 1 plat bœuf au choix + 1 boisson.', g: GL.nouillesBoeuf, p: 129, opts: [['Nouilles sautées', 129, GL.nouillesBoeuf], ['Riz sauté', 129, GL.riz], ['Wok saté', 129, GL.wokBoeuf], ['Pad Thaï', 129, GL.padGambas]] },
+      { n: 'Menu gambas', d: 'Gambas panées + 1 plat gambas au choix + 1 boisson.', g: GL.nouillesGambas, p: 139, opts: [['Nouilles sautées', 139, GL.nouillesGambas], ['Riz sauté', 139, GL.riz], ['Wok saté', 139, GL.wokGambas], ['Pad Thaï', 139, GL.padGambas]] },
+    ]},
     { id: 'desserts', title: 'Desserts', note: 'Faits maison', items: [
       { n: 'Tiramisu', d: 'Fait maison.', g: GL.tiraChoco, opts: [['Chocolat', 39, GL.tiraChoco], ['Café', 39, GL.tiraCafe]] },
       { n: 'Cheesecake', d: 'Fait maison.', g: GL.cheeseMangue, opts: [['Mangue', 39, GL.cheeseMangue], ['Framboise', 39, GL.cheeseFramboise]] },
       { n: 'Mousse au chocolat', d: 'Fait maison.', g: GL.mousse, p: 39 },
     ]},
-    { id: 'formules', title: 'Formules', note: 'Pour les étudiants', items: [
-      { n: 'Menu étudiant', d: '1 plat au choix + 1 dessert maison + 1 boisson. Sur présentation de la carte étudiante.', g: GL.menuPoulet, badge: 'Offre étudiant', p: 100 },
-    ]},
     { id: 'boissons', title: 'Boissons', note: '', items: [
       { n: 'Soda', d: 'Coca-Cola, Sprite, Fanta, Orangina, Hawaï, Poms…', p: 15 },
-      { n: 'Café', d: '', p: 15 },
       { n: 'Eau 50 cl / 33 cl', d: '', opts: [['Sidi Ali 50 cl', 15], ['Oulmès 33 cl', 15]] },
       { n: 'Eau 1,5 L / 1 L', d: '', opts: [['Sidi Ali 1,5 L', 22], ['Oulmès 1 L', 22]] },
     ]},
@@ -70,6 +76,8 @@
     wa: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7a11.6 11.6 0 0 1-4.5-4c-.4-.5-1-1.5-1-2.8 0-1.3.7-2 1-2.3.2-.2.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6-.3.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2 1.1 1 2 1.3 2.3 1.4.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.6-.1 1.2z"/></svg>',
     plus: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>',
   };
+
+  const isMenu = name => /^Menu (poulet|bœuf|gambas)$/.test(name);
 
   /* ---------- Panier ---------- */
   let cart = [];
@@ -88,7 +96,8 @@
   function waText() {
     const mode = (document.querySelector('input[name="mode"]:checked') || {}).value || 'À emporter';
     const lines = cart.map(l => `• ${l.q}× ${l.n}${l.o ? ' (' + l.o + ')' : ''} — ${l.p * l.q} DH`);
-    return `Bonjour Squid Wok ! Je souhaite commander :\n${lines.join('\n')}\n\nTotal : ${total()} DH\nMode : ${mode}\n\nNom :${mode === 'Livraison' ? '\nAdresse :' : '\nHeure de retrait :'}`;
+    const drinks = cart.some(l => isMenu(l.n)) ? '\nBoisson(s) du menu :' : '';
+    return `Bonjour Squid Wok ! Je souhaite commander :\n${lines.join('\n')}${drinks}\n\nTotal : ${total()} DH\nMode : ${mode}\n\nNom :${mode === 'Livraison' ? '\nAdresse :' : '\nHeure de retrait :'}`;
   }
 
   const drawer = document.createElement('div');
@@ -216,7 +225,7 @@
 
   // Lien WhatsApp direct pour un seul plat (sans passer par le panier)
   function direct(name, opt, price) {
-    const txt = `Bonjour Squid Wok ! Je voudrais commander :\n• 1× ${name}${opt ? ' (' + opt + ')' : ''} — ${price} DH\n\nMode : À emporter / Livraison\nNom :`;
+    const txt = `Bonjour Squid Wok ! Je voudrais commander :\n• 1× ${name}${opt ? ' (' + opt + ')' : ''} — ${price} DH${isMenu(name) ? '\nBoisson :' : ''}\n\nMode : À emporter / Livraison\nNom :`;
     return `https://wa.me/${WA}?text=${encodeURIComponent(txt)}`;
   }
 

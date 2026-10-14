@@ -162,16 +162,24 @@ img.glovo{--z:1.3;object-position:50% 62%;transform-origin:50% 62%}
 .stat span{font-size:.82rem;font-weight:700;color:var(--teal-deep)}
 
 /* ---------- Promo cards (pattern "Izaberi obrok / Postani deo ekipe") ---------- */
-.promos{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.5vw,28px)}
-.promo{position:relative;border-radius:var(--radius);overflow:hidden;min-height:440px;padding:clamp(24px,4vw,44px);display:flex;flex-direction:column;justify-content:space-between;isolation:isolate}
-.promo h3{font-size:clamp(3rem,6vw,5.4rem);max-width:8ch}
-.promo p{max-width:min(260px,48%);font-weight:700;text-transform:uppercase;font-size:.85rem;letter-spacing:.05em}
-.promo img{position:absolute;right:-8%;bottom:-8%;width:56%;aspect-ratio:1;object-fit:cover;border-radius:50%;z-index:-1;transition:transform .9s var(--ease);box-shadow:0 20px 50px rgba(0,0,0,.3)}
-.promo:hover img{transform:rotate(-8deg) scale(1.05)}
-.promo--orange{background:var(--orange);color:var(--teal-ink)}
-.promo--teal{background:var(--teal);color:var(--cream)}
-.promo--teal h3 em{color:var(--orange);font-style:normal}
-.promo .btn{align-self:flex-start}
+.menus{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.5vw,28px)}
+.menu-card{display:flex;flex-direction:column;border-radius:var(--radius);overflow:hidden;background:var(--teal);color:var(--cream)}
+.menu-card--orange{background:var(--orange);color:var(--teal-ink)}
+.menu-card--ink{background:var(--teal-ink)}
+.menu-card__img{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--teal-deep)}
+.menu-card__img img{width:100%;height:100%;object-fit:cover;transform:scale(1.3);transform-origin:50% 62%;transition:transform .8s var(--ease)}
+.menu-card:hover .menu-card__img img{transform:scale(1.4)}
+.menu-card__price{position:absolute;z-index:1;top:16px;right:16px;background:var(--orange);color:var(--teal-ink);font-family:var(--display);font-size:clamp(1.4rem,2.2vw,1.8rem);padding:.2em .7em;border-radius:999px;transform:rotate(5deg);box-shadow:0 5px 0 var(--orange-deep);white-space:nowrap}
+.menu-card--orange .menu-card__price{background:var(--teal);color:var(--cream);box-shadow:0 5px 0 var(--teal-deep)}
+.menu-card__body{flex:1;display:flex;flex-direction:column;gap:16px;padding:clamp(20px,2.6vw,30px)}
+.menu-card h3{font-size:clamp(2.2rem,3.4vw,3rem)}
+.menu-card h3 em{font-style:normal;color:var(--orange)}
+.menu-card--orange h3 em{color:var(--cream)}
+.menu-card ul{list-style:none;display:grid;gap:8px;font-weight:600}
+.menu-card li{display:flex;gap:10px;align-items:baseline}
+.menu-card li::before{content:"✺";color:var(--orange);flex:none}
+.menu-card--orange li::before{color:var(--teal)}
+.menu-card .btn{margin-top:auto;align-self:flex-start}
 
 /* ---------- Menu (carte complète) ---------- */
 .catnav{position:sticky;top:calc(var(--top-h) + var(--header-h));z-index:40;background:var(--cream);padding:12px 0;margin-bottom:28px;border-bottom:1px solid var(--cream-2)}
@@ -294,7 +302,10 @@ img.glovo{--z:1.3;object-position:50% 62%;transform-origin:50% 62%}
 
 /* ---------- Responsive ---------- */
 @media (max-width:900px){
-  .story,.infos,.promos{grid-template-columns:1fr}
+  .story,.infos{grid-template-columns:1fr}
+  .menus{grid-template-columns:1fr}
+  .menu-card{flex-direction:row}
+  .menu-card__img{flex:0 0 42%;aspect-ratio:auto;min-height:260px}
   .events{grid-template-columns:1fr 1fr}
   .events .event:last-child{grid-column:1/-1;aspect-ratio:16/9}
   .footer__cols{grid-template-columns:1fr 1fr}
@@ -313,9 +324,8 @@ img.glovo{--z:1.3;object-position:50% 62%;transform-origin:50% 62%}
   .event,.events .event:last-child{aspect-ratio:5/4}
   .stats{grid-template-columns:1fr 1fr 1fr;gap:8px}
   .stat{padding:12px}
-  .promo{min-height:420px}
-  .promo p{max-width:60%}
-  .promo img{width:62%}
+  .menu-card{flex-direction:column}
+  .menu-card__img{flex:none;aspect-ratio:4/3;min-height:0}
   .header .btn{width:46px;padding:0}
   .hero{padding-top:calc(var(--top-h) + 82px)}
   .topbar{font-size:.64rem;letter-spacing:.04em}

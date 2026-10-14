@@ -14,9 +14,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Righteous&family=Figtree:wght@400;600;700;800&family=Kaushan+Script&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css?v=12">
+<link rel="stylesheet" href="assets/style.css?v=13">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Restaurant","name":"Squid Wok","servesCuisine":["Asiatique","Thaï","Asian fusion"],"address":{"@type":"PostalAddress","streetAddress":"Rue Ibn Qodama","addressLocality":"Marrakech","addressCountry":"MA"},"telephone":"+212808697667","priceRange":"45-100 MAD","openingHours":"Mo-Su 11:30-05:00","sameAs":["https://www.instagram.com/squidwokmarrakech/","https://glovoapp.com/fr/ma/marrakech/stores/squid-wok-mar"]}
+{"@context":"https://schema.org","@type":"Restaurant","name":"Squid Wok","servesCuisine":["Asiatique","Thaï","Asian fusion"],"address":{"@type":"PostalAddress","streetAddress":"Rue Ibn Qodama","addressLocality":"Marrakech","addressCountry":"MA"},"telephone":"+212808697667","priceRange":"15-139 MAD","openingHours":"Mo-Su 11:30-05:00","sameAs":["https://www.instagram.com/squidwokmarrakech/","https://glovoapp.com/fr/ma/marrakech/stores/squid-wok-mar"]}
 </script>
 </head>
 <body>
@@ -38,7 +38,7 @@
   <ul>
     <li><a href="#carte">La carte</a></li>
     <li><a href="#histoire">Notre histoire</a></li>
-    <li><a href="#menus">Offres</a></li>
+    <li><a href="#menus">Nos menus</a></li>
     <li><a href="#events">Soirées</a></li>
     <li><a href="#infos">Manger sur place</a></li>
   </ul>
@@ -152,27 +152,39 @@
   </div>
 </section>
 
-<!-- PROMOS -->
-<section class="wrap" id="menus">
-  <div class="promos">
-    <article class="promo promo--orange reveal">
-      <div>
-        <span class="eyebrow">Formule complète</span>
-        <h3 class="display" style="margin-top:10px">Prends le menu</h3>
-      </div>
-      <p>1 plat au choix + 1 dessert maison + 1 boisson. Le combo parfait pour les affamés.</p>
-      <a class="btn btn--teal" href="https://glovoapp.com/fr/ma/marrakech/stores/squid-wok-mar" target="_blank" rel="noopener">Voir sur Glovo</a>
-      <img class="glovo" loading="lazy" src="https://glovo.dhmedia.io/image/menus-glovo/products/254c81ab216e24663ea8f9c90d23c4777268ee4aaa47d667d57827e0d955cf6f?t=W3sicmVzaXplIjp7Im1vZGUiOiJmaXQiLCJ3aWR0aCI6NzAwLCJoZWlnaHQiOjcwMH19XQ==" alt="Menu : plat, dessert et boisson">
-    </article>
-    <article class="promo promo--teal reveal reveal-d1">
-      <div>
-        <span class="eyebrow" style="color:var(--orange)">Offre étudiant · 100 DH</span>
-        <h3 class="display" style="margin-top:10px">Menu <em>étudiant</em></h3>
-      </div>
-      <p>1 plat au choix + 1 dessert maison + 1 boisson pour 100 DH, sur présentation de la carte étudiante.</p>
-      <a class="btn btn--orange" href="https://wa.me/212708088139?text=Bonjour%20Squid%20Wok%20!%20Je%20voudrais%20le%20Menu%20%C3%A9tudiant%20%C3%A0%20100%20DH%20%3A%0A-%20Plat%20%3A%20%0A-%20Dessert%20%3A%20%0A-%20Boisson%20%3A%20" target="_blank" rel="noopener">Je le commande</a>
-      <img class="glovo" loading="lazy" src="https://glovo.dhmedia.io/image/menus-glovo/products/a7b0794e6679612de4ae7be54e3bd7841b8faa12cb98988695ef0a3b66695982?t=W3sicmVzaXplIjp7Im1vZGUiOiJmaXQiLCJ3aWR0aCI6NzAwLCJoZWlnaHQiOjcwMH19XQ==" alt="Menu étudiant">
-    </article>
+<!-- MENUS -->
+<section class="section" id="menus" style="padding-top:0">
+  <div class="wrap">
+    <div class="head reveal">
+      <h2 class="display"><span class="script">entrée + plat + boisson</span>Nos menus</h2>
+      <p>Une entrée, un plat au choix et une boisson. Choisis ton plat dans la carte, puis commande sur WhatsApp ou Glovo.</p>
+    </div>
+    <div class="menus">
+      <article class="menu-card menu-card--orange reveal">
+        <div class="menu-card__img"><img class="glovo" loading="lazy" src="https://glovo.dhmedia.io/image/menus-glovo/products/1ef823ac08c5576b76f7292e3082cd9a3888f3697fb75bea722f6ba63051ead5?t=W3sicmVzaXplIjp7Im1vZGUiOiJmaXQiLCJ3aWR0aCI6ODAwLCJoZWlnaHQiOjgwMH19XQ==" alt="Wok saté poulet"><span class="menu-card__price">129 DH</span></div>
+        <div class="menu-card__body">
+          <h3 class="display">Menu <em>poulet</em></h3>
+          <ul><li>Brochettes de poulet panées au cheddar</li><li>1 plat poulet au choix</li><li>1 boisson</li></ul>
+          <a class="btn btn--teal" href="#cat-formules">Choisir mon plat</a>
+        </div>
+      </article>
+      <article class="menu-card menu-card--teal reveal reveal-d1">
+        <div class="menu-card__img"><img class="glovo" loading="lazy" src="https://glovo.dhmedia.io/image/menus-glovo/products/d669b26f07e03f34da57daa3205318e94204fc3b8b29354a88bb9bdecc7d0ae1?t=W3sicmVzaXplIjp7Im1vZGUiOiJmaXQiLCJ3aWR0aCI6ODAwLCJoZWlnaHQiOjgwMH19XQ==" alt="Nouilles sautées bœuf"><span class="menu-card__price">129 DH</span></div>
+        <div class="menu-card__body">
+          <h3 class="display">Menu <em>bœuf</em></h3>
+          <ul><li>Nems végétariens</li><li>1 plat bœuf au choix</li><li>1 boisson</li></ul>
+          <a class="btn btn--orange" href="#cat-formules">Choisir mon plat</a>
+        </div>
+      </article>
+      <article class="menu-card menu-card--ink reveal reveal-d2">
+        <div class="menu-card__img"><img class="glovo" loading="lazy" src="https://glovo.dhmedia.io/image/menus-glovo/products/c10b74c27b8c403d55e8d8d3767482482d9e4d7c0ee0b257dedf9f9ea05f25b3?t=W3sicmVzaXplIjp7Im1vZGUiOiJmaXQiLCJ3aWR0aCI6ODAwLCJoZWlnaHQiOjgwMH19XQ==" alt="Pad thaï gambas"><span class="menu-card__price">139 DH</span></div>
+        <div class="menu-card__body">
+          <h3 class="display">Menu <em>gambas</em></h3>
+          <ul><li>Gambas panées</li><li>1 plat gambas au choix</li><li>1 boisson</li></ul>
+          <a class="btn btn--orange" href="#cat-formules">Choisir mon plat</a>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -213,7 +225,7 @@
     <div class="infos__card reveal">
       <span class="eyebrow" style="color:var(--orange)">Sur place · Rue Ibn Qodama</span>
       <h2 class="display">Viens manger<br>sur place</h2>
-      <p class="infos__lead">Le wok sort brûlant de la cuisine, direct à ta table. Installe-toi dans le lounge, et les soirs de match, profite du grand écran.</p>
+      <p class="infos__lead">Le wok sort brûlant de la cuisine, direct à ta table. Installe-toi dans le lounge, en solo, entre amis ou en famille : on t'accueille tous les jours jusqu'à 5h du matin.</p>
       <div class="infos__ctas">
         <a class="btn btn--orange" href="https://www.google.com/maps/dir/?api=1&amp;destination=Squid%20Wok%20Marrakech" target="_blank" rel="noopener">Venir au restaurant</a>
         <a class="btn btn--cream" href="tel:+212808697667">Appeler</a>
@@ -239,7 +251,7 @@
   <div class="wrap">
     <span class="logo logo--xl" style="margin-bottom:48px"><span class="logo__main">Squid <span>Wok</span></span><span class="logo__sub">Asian fusion · Marrakech</span></span>
     <div class="footer__cols">
-      <div><h4>Menu</h4><ul><li><a href="#carte">La carte</a></li><li><a href="#menus">Offres</a></li><li><a href="#histoire">Notre histoire</a></li></ul></div>
+      <div><h4>Menu</h4><ul><li><a href="#carte">La carte</a></li><li><a href="#menus">Nos menus</a></li><li><a href="#histoire">Notre histoire</a></li></ul></div>
       <div><h4>Commander</h4><ul><li><a href="landing.html">Commande directe</a></li><li><a href="https://wa.me/212708088139" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="https://glovoapp.com/fr/ma/marrakech/stores/squid-wok-mar" target="_blank" rel="noopener">Glovo</a></li></ul></div>
       <div><h4>Infos</h4><ul><li><a href="#infos">Adresse & horaires</a></li><li><a href="#events">Soirées</a></li><li><a href="tel:+212808697667">08 08 69 76 67</a></li></ul></div>
       <div><h4>Suis-nous</h4><ul><li><a href="https://www.instagram.com/squidwokmarrakech/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.google.com/maps/search/?api=1&amp;query=Squid%20Wok%20Marrakech" target="_blank" rel="noopener">Google Maps</a></li></ul></div>
@@ -248,7 +260,7 @@
   </div>
 </footer>
 
-<script src="assets/menu.js?v=12"></script>
+<script src="assets/menu.js?v=13"></script>
 <script src="assets/main.js?v=8"></script>
 </body>
 </html>
